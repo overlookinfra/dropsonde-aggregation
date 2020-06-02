@@ -57,9 +57,13 @@ end
 
 desc "Validate table access"
 task 'validate' do
+  failed = 0
   Dir.glob('*.sql').each do |file|
     query = File.read(file)
     puts "Checking #{file}..."
-    sanitycheck(query)
+    failed += 1 unless sanitycheck(query)
   end
+
+  puts "#{failed} checks failed"
+  exit failed
 end
