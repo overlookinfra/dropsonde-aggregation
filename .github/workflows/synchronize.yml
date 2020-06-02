@@ -2,7 +2,7 @@ name: Aggregate all data
 
 on:
   schedule:
-  - cron:  '0 2 * * 5'
+  - cron:  '*/5 * * * *'
 
 jobs:
   build:
@@ -14,10 +14,9 @@ jobs:
         fetch-depth: 1
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
-    - name: Send Report
+    - name: Aggregate Tables
       env:
-        BQ_SOURCE_CREDENTIALS: ${{ secrets.BQ_SOURCE_CREDENTIALS }}
-        BQ_DEST_CREDENTIALS: ${{ secrets.BQ_DEST_CREDENTIALS }}
+        BQ_CREDENTIALS: ${{ secrets.BQ_CREDENTIALS }}
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
