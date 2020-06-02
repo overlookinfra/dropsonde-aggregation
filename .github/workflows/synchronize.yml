@@ -14,7 +14,7 @@ jobs:
         fetch-depth: 1
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
-    - name: Send Report
+    - name: Aggregate Tables
       env:
         BQ_CREDENTIALS: ${{ secrets.BQ_CREDENTIALS }}
       run: |
