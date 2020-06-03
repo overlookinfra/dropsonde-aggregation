@@ -79,7 +79,7 @@ development, but once it's modified to query the proper dataset and committed to
 this repository, that metric will appear in the [public aggregation dataset](https://console.cloud.google.com/bigquery?p=dataops-puppet-public-data&d=aggregated).
 
 > ***📍Important note:***<br />
-> Any query that reveals private information will be rejected and authors who
-> repeatedly commit this offense in a malicious seeming manner will be prohibited
-> from contributing in the future.
+> Any aggregation query that reveals private information will be rejected and
+> authors who repeatedly commit this offense in a malicious seeming manner will
+> be prohibited from contributing in the future.
 
