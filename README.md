@@ -68,14 +68,14 @@ It's relatively straightforward to write queries in the [BigQuery flavor of SQL]
 with one little wrinkle. If you can't _see_ the metrics dataset, how can one
 possibly develop useful queries using that data? It's a fair question to ask.
 
-Every so often we generate a random dataset.  It's all completely made-up data,
+Every so often we generate a randomized metrics table.  It's all completely made-up data,
 but it follows the actual telemetry schema exactly. And while made-up, the data
 is completely representative of what the actual data looks like.
 
-This means that you can load that [dataset](https://console.cloud.google.com/bigquery?p=dataops-puppet-public-data&d=community&t=community_metrics&page=table)
+This means that you can load that [example table](https://console.cloud.google.com/bigquery?p=dataops-puppet-public-data&d=community&t=community_metrics&page=table)
 up in the BigQuery Console and develop any query to generate any metric you'd
 like to see. The output of that metric will of course be meaningless during
-development, but once it's modified to query the proper dataset and committed to
+development, but once it's modified to query the live metrics table and committed to
 this repository, that metric will appear in the [public aggregation dataset](https://console.cloud.google.com/bigquery?p=dataops-puppet-public-data&d=aggregated).
 
 > ***📍Important note:***<br />
