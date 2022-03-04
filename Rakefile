@@ -45,7 +45,7 @@ task 'sync' do
 
     begin
       job = source.query_job(query,
-                            :write => 'truncate',
+                            :write => 'append',
                             :table => dest.table(table, :skip_lookup => true))
       job.wait_until_done!
     rescue => e
